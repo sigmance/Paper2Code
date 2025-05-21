@@ -12,7 +12,7 @@ from utils import extract_planning, content_to_json, extract_code_from_content, 
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--paper_name', type=str)
-parser.add_argument('--gemini_version', type=str, default='gemini-pro')
+parser.add_argument('--gemini_version', type=str, default='gemini-1.5-pro-preview-0514')
 parser.add_argument('--paper_format', type=str, default='JSON', choices=['JSON', 'LaTeX'])
 parser.add_argument('--pdf_json_path', type=str)
 parser.add_argument('--pdf_latex_path', type=str)

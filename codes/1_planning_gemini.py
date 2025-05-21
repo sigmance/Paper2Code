@@ -10,7 +10,7 @@ from utils import print_response, print_log_cost, load_accumulated_cost, save_ac
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--paper_name', type=str)
-parser.add_argument('--gemini_version', type=str, default='gemini-pro')
+parser.add_argument('--gemini_version', type=str, default='gemini-1.5-pro-preview-0514')
 parser.add_argument('--paper_format', type=str, default='JSON', choices=['JSON', 'LaTeX'])
 parser.add_argument('--pdf_json_path', type=str)
 parser.add_argument('--pdf_latex_path', type=str)
@@ -70,7 +70,7 @@ The response should give us a strong roadmap, making it easier to write the code
 file_list_msg = [
     {'role': 'user', 'content': """Your goal is to create a concise, usable, and complete software system design for reproducing the paper's method. Use appropriate open-source libraries and keep the overall architecture simple.
 
-Based on the plan for reproducing the paper’s main method, please design a concise, usable, and complete software system.
+Based on the plan for reproducing the paper's main method, please design a concise, usable, and complete software system.
 Keep the architecture simple and make effective use of open-source libraries.
 
 -----
@@ -110,7 +110,7 @@ task_list_msg = [
     {'role': 'user', 'content': """Your goal is break down tasks according to PRD/technical design, generate a task list, and analyze task dependencies.
 You will break down tasks, analyze dependencies.
 
-You outline a clear PRD/technical design for reproducing the paper’s method and experiments.
+You outline a clear PRD/technical design for reproducing the paper's method and experiments.
 
 Now, let's break down tasks according to PRD/technical design, generate a task list, and analyze task dependencies.
 The Logic Analysis should not only consider the dependencies between files but also provide detailed descriptions to assist in writing the code needed to reproduce the paper.

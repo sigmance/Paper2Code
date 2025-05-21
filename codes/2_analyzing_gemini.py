@@ -11,7 +11,7 @@ from utils import extract_planning, content_to_json, print_response, print_log_c
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--paper_name', type=str)
-parser.add_argument('--gemini_version', type=str, default='gemini-pro')
+parser.add_argument('--gemini_version', type=str, default='gemini-1.5-pro-preview-0514')
 parser.add_argument('--paper_format', type=str, default='JSON', choices=['JSON', 'LaTeX'])
 parser.add_argument('--pdf_json_path', type=str)
 parser.add_argument('--pdf_latex_path', type=str)
@@ -77,7 +77,7 @@ analysis_msg = [
 You will receive a research paper in {paper_format} format, an overview of the plan, a design in JSON format consisting of \"Implementation approach\", \"File list\", \"Data structures and interfaces\", and \"Program call flow\", followed by a task in JSON format that includes \"Required packages\", \"Required other language third-party packages\", \"Logic Analysis\", and \"Task list\", along with a configuration file named \"config.yaml\".
 
 Your task is to conduct a comprehensive logic analysis to accurately reproduce the experiments and methodologies described in the research paper.
-This analysis must align precisely with the paper’s methodology, experimental setup, and evaluation criteria.
+This analysis must align precisely with the paper's methodology, experimental setup, and evaluation criteria.
 
 1. Align with the Paper: Your analysis must strictly follow the methods, datasets, model configurations, hyperparameters, and experimental setups described in the paper.
 2. Be Clear and Structured: Present your analysis in a logical, well-organized, and actionable format that is easy to follow and implement.

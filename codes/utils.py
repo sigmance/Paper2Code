@@ -238,6 +238,8 @@ def cal_cost(response_json, model_name):
         # gemini
         "gemini-pro": {"input": 0.0, "cached_input": 0.0, "output": 0.0},
         "gemini-pro-vision": {"input": 0.0, "cached_input": 0.0, "output": 0.0},
+        "gemini-1.5-pro-preview-0514": {"input": 0.0, "cached_input": 0.0, "output": 0.0},
+        "gemini-2.5-pro-preview-05-06": {"input": 0.0, "cached_input": 0.0, "output": 0.0},
     }
 
     

@@ -1,13 +1,13 @@
 # export OPENAI_API_KEY=""
 
-GPT_VERSION="o3-mini"
+GPT_VERSION="o1"
 
-PAPER_NAME="Transformer"
-PDF_PATH="../examples/Transformer.pdf" # .pdf
-PDF_JSON_PATH="../examples/Transformer.json" # .json
-PDF_JSON_CLEANED_PATH="../examples/Transformer_cleaned.json" # _cleaned.json
-OUTPUT_DIR="../outputs/Transformer"
-OUTPUT_REPO_DIR="../outputs/Transformer_repo"
+PAPER_NAME="Towards_an_AI_co-scientist_${GPT_VERSION}"
+PDF_PATH="/Users/taddeusbuica/Desktop/experiments/Paper2Code/Towards_an_AI_co-scientist2502.18864v1.pdf" # .pdf
+PDF_JSON_PATH="/Users/taddeusbuica/Desktop/experiments/Paper2Code/data/paper_json/Towards_an_AI_co-scientist2502.18864v1.json" # .json
+PDF_JSON_CLEANED_PATH="../examples/Towards_an_AI_co-scientist2502.18864v1.json" # _cleaned.json
+OUTPUT_DIR="../outputs/Towards_an_AI_co-scientist_${GPT_VERSION}"
+OUTPUT_REPO_DIR="../outputs/Towards_an_AI_co-scientist_repo_${GPT_VERSION}"
 
 mkdir -p $OUTPUT_DIR
 mkdir -p $OUTPUT_REPO_DIR
