@@ -34,6 +34,16 @@ cd scripts
 bash run.sh
 ```
 
+### Using Gemini API
+```bash
+pip install google-generativeai
+
+export GOOGLE_API_KEY="<GOOGLE_API_KEY>"
+
+cd scripts
+bash run_gemini.sh
+```
+
 ### Using Open Source Models with vLLM
 - If you encounter any issues installing vLLM, please refer to the [official vLLM repository](https://github.com/vllm-project/vllm).
 - The default model is `deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct`.
@@ -63,13 +73,15 @@ outputs
 - 💡 To use the `o3-mini` version, make sure you have the latest `openai` package installed.
 - 📦 Install only what you need:
   - For OpenAI API: `openai`
+  - For Gemini API: `google-generativeai`
   - For open-source models: `vllm`
       - If you encounter any issues installing vLLM, please refer to the [official vLLM repository](https://github.com/vllm-project/vllm).
 
 
 ```bash
-pip install openai 
-pip install vllm 
+pip install openai
+pip install google-generativeai
+pip install vllm
 ```
 
 - Or, if you prefer, you can install all dependencies using `pip`:
@@ -129,6 +141,23 @@ export OPENAI_API_KEY="<OPENAI_API_KEY>"
 
 cd scripts
 bash run_latex.sh
+```
+
+#### Using Gemini API
+```bash
+# Using the PDF-based JSON format of the paper
+export GOOGLE_API_KEY="<GOOGLE_API_KEY>"
+
+cd scripts
+bash run_gemini.sh
+```
+
+```bash
+# Using the LaTeX source of the paper
+export GOOGLE_API_KEY="<GOOGLE_API_KEY>"
+
+cd scripts
+bash run_latex_gemini.sh
 ```
 
 

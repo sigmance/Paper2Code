@@ -81,7 +81,7 @@ analysis_msg = [
 You will receive a research paper in {paper_format} format, an overview of the plan, a design in JSON format consisting of "Implementation approach", "File list", "Data structures and interfaces", and "Program call flow", followed by a task in JSON format that includes "Required packages", "Required other language third-party packages", "Logic Analysis", and "Task list", along with a configuration file named "config.yaml". 
 
 Your task is to conduct a comprehensive logic analysis to accurately reproduce the experiments and methodologies described in the research paper. 
-This analysis must align precisely with the paper’s methodology, experimental setup, and evaluation criteria.
+This analysis must align precisely with the paper's methodology, experimental setup, and evaluation criteria.
 
 1. Align with the Paper: Your analysis must strictly follow the methods, datasets, model configurations, hyperparameters, and experimental setups described in the paper.
 2. Be Clear and Structured: Present your analysis in a logical, well-organized, and actionable format that is easy to follow and implement.
@@ -186,7 +186,10 @@ for todo_file_name in tqdm(todo_file_lst):
     total_accumulated_cost = temp_total_accumulated_cost
 
     # save
-    with open(f'{artifact_output_dir}/{todo_file_name}_simple_analysis.txt', 'w') as f:
+    analysis_file_path = os.path.join(artifact_output_dir, f'{todo_file_name}_simple_analysis.txt')
+    analysis_file_directory = os.path.dirname(analysis_file_path)
+    os.makedirs(analysis_file_directory, exist_ok=True)
+    with open(analysis_file_path, 'w') as f:
         f.write(completion_json['choices'][0]['message']['content'])
 
 
