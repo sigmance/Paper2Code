@@ -171,7 +171,12 @@ for todo_file_name in tqdm(todo_file_lst):
     temp_total_accumulated_cost = print_log_cost(completion_json, args.gemini_version, current_stage, output_dir, total_accumulated_cost)
     total_accumulated_cost = temp_total_accumulated_cost
 
-    with open(f'{artifact_output_dir}/{todo_file_name}_simple_analysis.txt', 'w') as f:
+    # Ensure subdirectory exists before writing the artifact file
+    artifact_file_path = f'{artifact_output_dir}/{todo_file_name}_simple_analysis.txt'
+    artifact_file_dir = os.path.dirname(artifact_file_path)
+    os.makedirs(artifact_file_dir, exist_ok=True)
+
+    with open(artifact_file_path, 'w') as f:
         f.write(completion_json['choices'][0]['message']['content'])
 
     done_file_lst.append(todo_file_name)

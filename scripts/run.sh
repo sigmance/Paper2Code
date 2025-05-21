@@ -1,6 +1,6 @@
 # export OPENAI_API_KEY=""
 
-GPT_VERSION="o1"
+GPT_VERSION="o3"
 
 PAPER_NAME="Towards_an_AI_co-scientist_${GPT_VERSION}"
 PDF_PATH="/Users/taddeusbuica/Desktop/experiments/Paper2Code/Towards_an_AI_co-scientist2502.18864v1.pdf" # .pdf
@@ -35,6 +35,8 @@ python ../codes/1.1_extract_config.py \
     --output_dir ${OUTPUT_DIR}
 
 cp -rp ${OUTPUT_DIR}/planning_config.yaml ${OUTPUT_REPO_DIR}/config.yaml
+
+mkdir -p ${OUTPUT_DIR}/analyzing_artifacts
 
 python ../codes/2_analyzing.py \
     --paper_name $PAPER_NAME \
